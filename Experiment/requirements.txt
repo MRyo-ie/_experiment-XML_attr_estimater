@@ -1,0 +1,6 @@
+tf-nightly
+matplotlib
+scikit-learn
+
+torchtext
+transformers
