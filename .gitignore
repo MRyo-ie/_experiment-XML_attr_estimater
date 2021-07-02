@@ -5,6 +5,7 @@ aclImdb/
 data/
 model/
 _experiment-Transformer_DocumentClassifier
+_logs/
 
 *.tar.gz
 *.tsv
