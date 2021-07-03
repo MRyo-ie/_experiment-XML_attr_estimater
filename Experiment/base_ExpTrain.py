@@ -32,7 +32,7 @@ from torch import optim
 from torch.utils.tensorboard import SummaryWriter
 
 
-class example_ExpTrain():
+class BaselineExpTrain():
     def __init__(self, train_pairs, test_pairs):
         self.train_pairs = train_pairs
         self.test_pairs = test_pairs
@@ -50,10 +50,8 @@ class example_ExpTrain():
         # writer.add_graph(model.encoder)
         # writer.add_graph(model.decoder)
 
-        # liveloss = PlotLosses()
-        optimizer = optim.Adam(
-                        [p for p in model.encoder.parameters()]
-                        + [p for p in model.decoder.parameters()] )
+        # SGDからAdamに変更。特に意味はなし
+        optimizer = optim.Adam(model.parameters(), lr=0.001)
 
         criterion = nn.NLLLoss(ignore_index=PAD_token)
 
