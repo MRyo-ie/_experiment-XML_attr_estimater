@@ -27,6 +27,16 @@ class ModelABC(metaclass=ABCMeta):
         self.model = LogisticRegression(arg1, arg2)
     '''
 
+
+    @abstractmethod
+    def load_weights(self, load_m_path='_logs/test/LSTM_classifier.pth'):
+        raise NotImplementedError()
+    
+    @abstractmethod
+    def save(self, save_f_path='_logs/test/LSTM_classifier.pth',):
+        raise NotImplementedError()
+    
+
     @abstractmethod
     def fit(self, datadict) -> dict:
         """
