@@ -105,12 +105,11 @@ class Batch_ExpTrain():
                 print('[Info] model saved! (max valid)')
             
             # 最終 step の重みを保存
-            model.save('LSTM_classifier_latest.pth')
+            model.save('model_weghts_latest.pth')
 
             valid_acc_arr.append(valid_acc)
             if max(valid_acc_arr[-early_stopping:]) < max(valid_acc_arr):
                 print('[Info] early stopping します。')
-                writer.close()
                 break
         
         writer.close()
